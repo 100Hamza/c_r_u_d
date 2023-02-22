@@ -15,13 +15,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
-  back_button_interceptor:
-    dependency: transitive
-    description:
-      name: back_button_interceptor
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "6.0.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -149,6 +142,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttertoast:
+    dependency: "direct dev"
+    description:
+      name: fluttertoast
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "8.2.1"
   http_parser:
     dependency: transitive
     description:
@@ -177,13 +177,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
-  loader_overlay:
+  loading_overlay:
     dependency: "direct dev"
     description:
-      name: loader_overlay
+      name: loading_overlay
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "0.3.0"
   matcher:
     dependency: transitive
     description:
