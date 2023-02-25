@@ -26,14 +26,14 @@ TextEditingController confirmPassController = TextEditingController();
 bool isLoading = false;
 
 class _RegisterBodyState extends State<RegisterBody> {
-  @override
-  void initState() {
-    super.initState();
-    Firebase.initializeApp().whenComplete(() {
-      print("completed");
-      setState(() {});
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Firebase.initializeApp().whenComplete(() {
+  //     print("completed");
+  //     setState(() {});
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -42,93 +42,96 @@ class _RegisterBodyState extends State<RegisterBody> {
       isLoading: isLoading,
       child: Center(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Image.asset(
-                'assets/images/Logo.png',
-                height: 100,
-                width: 100,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              CustomText(
-                text: 'Register You Account',
-                size: 22.0,
-                space: 2.0,
-                textColor: Colors.black,
-                weight: FontWeight.w900,
-              ),
-              const SizedBox(
-                height: 40.0,
-              ),
-              CustomeTextTField(
-                controller: nameController,
-                hint: 'Enter Name',
-                label: 'Name',
-                icon: Icons.person,
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              CustomeTextTField(
-                controller: emailController,
-                hint: 'Enter Email',
-                label: 'Email',
-                icon: Icons.email,
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              CustomeTextTField(
-                controller: passController,
-                hint: 'Enter You Password',
-                label: 'Password',
-                icon: Icons.lock,
-                isPass: true,
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              CustomeTextTField(
-                isPass: true,
-                controller: confirmPassController,
-                hint: 'Confirm Your Password',
-                label: 'Confirm Password',
-                icon: Icons.lock,
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              CustomButton(
-                buttonName: 'SignUp',
-                onPress: () {
-                  if (nameController.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Name Can Not be empty');
-                  } else if (emailController.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'email Can Not be empty');
-                  } else if (passController.text.isEmpty) {
-                    Fluttertoast.showToast(msg: 'Password Can Not be empty');
-                  } else if (confirmPassController.text.isEmpty) {
-                    Fluttertoast.showToast(
-                        msg: 'Confirm Password Can Not be empty');
-                  } else if (confirmPassController.text !=
-                      passController.text) {
-                    Fluttertoast.showToast(
-                        msg: 'password does not match');
-                  } else {
-                    _createaccount();
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/Logo.png',
+                  height: 100,
+                  width: 100,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomText(
+                  text: 'Register You Account',
+                  size: 22.0,
+                  space: 2.0,
+                  textColor: Colors.black,
+                  weight: FontWeight.w900,
+                ),
+                const SizedBox(
+                  height: 40.0,
+                ),
+                CustomeTextTField(
+                  controller: nameController,
+                  hint: 'Enter Name',
+                  label: 'Name',
+                  icon: Icons.person,
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                CustomeTextTField(
+                  controller: emailController,
+                  hint: 'Enter Email',
+                  label: 'Email',
+                  icon: Icons.email,
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                CustomeTextTField(
+                  controller: passController,
+                  hint: 'Enter You Password',
+                  label: 'Password',
+                  icon: Icons.lock,
+                  isPass: true,
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                CustomeTextTField(
+                  isPass: true,
+                  controller: confirmPassController,
+                  hint: 'Confirm Your Password',
+                  label: 'Confirm Password',
+                  icon: Icons.lock,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                CustomButton(
+                  buttonName: 'SignUp',
+                  onPress: () {
+                    if (nameController.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Name Can Not be empty');
+                    } else if (emailController.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'email Can Not be empty');
+                    } else if (passController.text.isEmpty) {
+                      Fluttertoast.showToast(msg: 'Password Can Not be empty');
+                    } else if (confirmPassController.text.isEmpty) {
+                      Fluttertoast.showToast(
+                          msg: 'Confirm Password Can Not be empty');
+                    } else if (confirmPassController.text !=
+                        passController.text) {
+                      Fluttertoast.showToast(
+                          msg: 'password does not match');
+                    } else {
+                      _createaccount();
 
-                  }
-                },
-              ),
-              CustomButton(
-                buttonName: 'Login',
-                onPress: () {
-                  NavigationHelper.pushRoute(context, const LoginView());
-                },
-              )
-            ],
+                    }
+                  },
+                ),
+                CustomButton(
+                  buttonName: 'Login',
+                  onPress: () {
+                    NavigationHelper.pushRoute(context, const LoginView());
+                  },
+                )
+              ],
+            ),
           ),
         ),
       ),
