@@ -11,10 +11,7 @@ class RegisterView extends StatelessWidget {
       appBar: AppBar(
         title: Text("Register"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: RegisterBody(),
-      ),
+      body: RegisterBody(),
     );
   }
 }

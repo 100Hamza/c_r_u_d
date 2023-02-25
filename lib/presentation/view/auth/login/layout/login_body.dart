@@ -8,7 +8,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 
 import '../../../../../helper/navigation_helper.dart';
-import '../../home/home_view.dart';
+
+import '../../../home/home_view.dart';
 import '../../register/resigter_view.dart';
 
 class LoginBody extends StatefulWidget {
@@ -30,64 +31,68 @@ class _LoginBodyState extends State<LoginBody> {
       child: Scaffold(
         body: Center(
         child: SingleChildScrollView(
-        child: Column(
-        children: [
-        Image.asset(
-        'assets/images/Logo.png',
-        height: 100,
-        width: 100,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+          children: [
+          Image.asset(
+          'assets/images/Logo.png',
+          height: 100,
+          width: 100,
       ),
       const SizedBox(
-        height: 15,
+          height: 15,
       ),
       CustomText(
-        text: 'Login',
-        size: 22.0,
-        space: 2.0,
-        textColor: Colors.black,
-        weight: FontWeight.w900,
+          text: 'Login',
+          size: 22.0,
+          space: 2.0,
+          textColor: Colors.black,
+          weight: FontWeight.w900,
       ),
       const SizedBox(
-        height: 80.0,
+          height: 80.0,
       ),
       const SizedBox(
-        height: 20.0,
+          height: 20.0,
       ),
       CustomeTextTField(
-        controller: emailController,
-        hint: 'Enter Email',
-        label: 'Email',
-        icon: Icons.email,
+          controller: emailController,
+          hint: 'Enter Email',
+          label: 'Email',
+          icon: Icons.email,
       ),
+      SizedBox(height: 10,),
       CustomeTextTField(
-          controller: passController,
-          hint: 'Enter Password',
-          label: 'Password',
-          icon: Icons.person,
-          isPass: true),
+            controller: passController,
+            hint: 'Enter Password',
+            label: 'Password',
+            icon: Icons.person,
+            isPass: true),
       const SizedBox(
-        height: 50,
+          height: 50,
       ),
       CustomButton(
-        buttonName: 'Login',
-        onPress: () {
-          if (emailController.text.isEmpty) {
-            Fluttertoast.showToast(msg: 'Email  Can Not be empty');
-          } else if (passController.text.isEmpty) {
-            Fluttertoast.showToast(msg: 'Password  Can Not be empty');
-          } else {
-            _login();
-          }
-        },
+          buttonName: 'Login',
+          onPress: () {
+            if (emailController.text.isEmpty) {
+              Fluttertoast.showToast(msg: 'Email  Can Not be empty');
+            } else if (passController.text.isEmpty) {
+              Fluttertoast.showToast(msg: 'Password  Can Not be empty');
+            } else {
+              _login();
+            }
+          },
       ),
       CustomButton(
-        buttonName: 'SigUp',
-        onPress: () {
-          NavigationHelper.pushRoute(context, const RegisterView());
-        },
+          buttonName: 'SigUp',
+          onPress: () {
+            NavigationHelper.pushRoute(context, const RegisterView());
+          },
       )
       ],
-    ),)
+    ),
+        ),)
     ,
     )
     ,
