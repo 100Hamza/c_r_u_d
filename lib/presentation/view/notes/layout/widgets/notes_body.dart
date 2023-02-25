@@ -47,11 +47,11 @@ class _NotesBodyState extends State<NotesBody> {
       print("User ID: $id");
     await FirebaseFirestore.instance.collection('Notes').doc(id).set({
       "Title": titleController.text,
-      "Message": messageController,
+      "Message": messageController.text,
     }).whenComplete(() {
       isLoadingFalse();
       print("Loaing is Flase ");
-      NavigationHelper.pushRoute(context, const Home());
+      // NavigationHelper.pushRoute(context, const Home());
     });
   }
 
